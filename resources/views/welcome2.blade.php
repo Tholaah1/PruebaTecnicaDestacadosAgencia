@@ -4,24 +4,8 @@
 
 @section('contenido')
     <br>
-    <div class="row"> 
+    <div class="row">
         <h1>Prueba tecnica - Consumo API Rick and Morty - Nicolas Toledo</h1>
-        <p>Los personajes que estas viendo, son los primeros 20 personajes vivos de la serie "Rick and Morty". Si quieres seguir viendo los demas personajes vivos, haz click en el boton "Ver siguiente pagina". Si quieres ver los personajes muertos o los personajes que se desconoce su estado independientemente de la especie, puedes filtarlos haciendo click en los botones "Muertos" o "Estado desconocido".</p>
-        
-        <div class="d-grid gap-2 d-md-block mb-3">
-            <a href="{{route('apiram.index')}}" class="btn btn-primary"> Muertos</a>
-            <a href="{{route('apiram.index')}}" class="btn btn-primary"> Estado desconocido</a>
-        </div>
-
-        <p>Si quieres ver todos los personajes humanos, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes alien, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes Poopybutthole, haz click en el siguiente boton</p>
-        <p>Si quieres ver todas las criaturas mitologicas, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes humanoides, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes Cronenberg, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes animales haz click en el siguiente boton</p>    
-        <p>Si quieres ver todos los personajes Robot, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes de especie desconocida, haz click en el siguiente boton</p>
         @foreach ($charactersArray['results'] as $personaje)
         <div class="col-md-6">
             <ul class="list-group">
@@ -65,12 +49,11 @@
             </ul>
         </div>
         @endforeach
-    </div>
-    <div class="row">
         <form action="{{ route('apiram.alive2') }}" method="post">
             @csrf
             <input type="hidden" name="siguiente" value="{{ $siguiente }}">
             <button type="submit" class="btn btn-primary">Ir a la siguiente pagina</button>
+            <a href="{{route('apiram.index')}}" class="btn btn-primary"> Volver a la primera pagina</a>
         </form>
     </div>
 @endsection

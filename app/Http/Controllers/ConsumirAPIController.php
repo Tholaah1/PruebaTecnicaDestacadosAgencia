@@ -14,7 +14,7 @@ class ConsumirAPIController extends Controller
         //Mostrar datos de la API
         $characters = HTTP::get('https://rickandmortyapi.com/api/character/?status=alive');
         $charactersArray = $characters->json();
-        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->values()->all();
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
         $siguiente = $charactersArray['info']['next'];
         //{{print_r($charactersArray['results']);}}
         return view('welcome', compact('charactersArray', 'siguiente'));
@@ -24,13 +24,14 @@ class ConsumirAPIController extends Controller
     public function alive2(Request $request)
     {
         //Mostrar datos de la API
+        
         $siguiente = $request->input('siguiente');
         $characters = HTTP::get($siguiente);
         $charactersArray = $characters->json();
-        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->values()->all();
-        //{{print_r($charactersArray['results']);}}
         $siguiente = $charactersArray['info']['next'];
-        return view('welcome', compact('charactersArray', 'siguiente'));
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
+        //{{print_r($charactersArray['results']);}}
+        return view('welcome2', compact('charactersArray', 'siguiente'));
     }
 
 
