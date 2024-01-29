@@ -14,14 +14,23 @@ class ConsumirAPIController extends Controller
         //Mostrar datos de la API
         $characters = HTTP::get('https://rickandmortyapi.com/api/character/?status=alive');
         $charactersArray = $characters->json();
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->values()->all();
+        $siguiente = $charactersArray['info']['next'];
         //{{print_r($charactersArray['results']);}}
-        return view('welcome', compact('charactersArray'));
+        return view('welcome', compact('charactersArray', 'siguiente'));
     }
 
 
-    public function create()
+    public function alive2(Request $request)
     {
-        //
+        //Mostrar datos de la API
+        $siguiente = $request->input('siguiente');
+        $characters = HTTP::get($siguiente);
+        $charactersArray = $characters->json();
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->values()->all();
+        //{{print_r($charactersArray['results']);}}
+        $siguiente = $charactersArray['info']['next'];
+        return view('welcome', compact('charactersArray', 'siguiente'));
     }
 
 

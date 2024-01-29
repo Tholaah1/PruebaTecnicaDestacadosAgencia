@@ -16,7 +16,11 @@
             </ul>
         </div>
         @endforeach
-        <a class="btn btn-primary" href="{{$charactersArray['info']['next']}}" role="button">Siguiente Pagina</a>
+        <form action="{{ route('apiram.alive2') }}" method="post">
+            @csrf
+            <input type="hidden" name="siguiente" value="{{ $siguiente }}">
+            <button type="submit">Ir a la siguiente pagina</button>
+        </form>
         
     </div>
 @endsection
