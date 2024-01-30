@@ -9,21 +9,22 @@
         <p>Los personajes que estas viendo, son los primeros 20 personajes vivos de la serie "Rick and Morty". Si quieres seguir viendo los demas personajes vivos, haz click en el boton "Ver siguiente pagina". Si quieres ver los personajes muertos o los personajes que se desconoce su estado independientemente de la especie, puedes filtarlos haciendo click en los botones "Muertos" o "Estado desconocido".</p>
         
         <div class="d-grid gap-2 d-md-block mb-3">
-            <a href="{{route('apiram.index')}}" class="btn btn-primary"> Muertos</a>
-            <a href="{{route('apiram.index')}}" class="btn btn-primary"> Estado desconocido</a>
+            <a href="{{route('apiram.dead1')}}" class="btn btn-danger"> Muertos</a>
+            <a href="{{route('apiram.unknown1')}}" class="btn btn-warning"> Estado desconocido</a>
+        </div>
+        <p>Si quieres ver las demas especies, puedes hacer click en el boton de la especie: </p>
+        <div class="d-grid gap-2 d-md-block mb-3">
+            <a href="{{route('apiram.humans')}}" class="btn btn-success">Humanos y Humanoides</a>
+            <a href="{{route('apiram.index')}}" class="btn btn-success"> Aliens</a>
+            <a href="{{route('apiram.index')}}" class="btn btn-success"> Poopybuttholes</a>
+            <a href="{{route('apiram.index')}}" class="btn btn-success"> Criaturas mitologicas</a>
+            <a href="{{route('apiram.index')}}" class="btn btn-success"> Crononberg</a>
+            <a href="{{route('apiram.index')}}" class="btn btn-success"> Animales</a>
+            <a href="{{route('apiram.index')}}" class="btn btn-warning"> Especies desconocidas</a>
         </div>
 
-        <p>Si quieres ver todos los personajes humanos, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes alien, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes Poopybutthole, haz click en el siguiente boton</p>
-        <p>Si quieres ver todas las criaturas mitologicas, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes humanoides, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes Cronenberg, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes animales haz click en el siguiente boton</p>    
-        <p>Si quieres ver todos los personajes Robot, haz click en el siguiente boton</p>
-        <p>Si quieres ver todos los personajes de especie desconocida, haz click en el siguiente boton</p>
         @foreach ($charactersArray['results'] as $personaje)
-        <div class="col-md-6">
+        <div class="col-md-6 mb-3">
             <ul class="list-group">
                 <li class="list-group-item active">{{$personaje['name']}}</li>
                 <li class="list-group-item d-flex justify-content-center"><img src="{{$personaje['image']}}" alt=""></li>
@@ -66,7 +67,7 @@
         </div>
         @endforeach
     </div>
-    <div class="row">
+    <div class="row mb-3 gap-2">
         <form action="{{ route('apiram.alive2') }}" method="post">
             @csrf
             <input type="hidden" name="siguiente" value="{{ $siguiente }}">

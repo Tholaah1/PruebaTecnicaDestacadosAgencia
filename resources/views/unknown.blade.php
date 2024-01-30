@@ -1,11 +1,14 @@
 @extends('layout/plantilla')
 
-@section('tituloPagina', 'API RICK AND MORTY - PRUEBA TECNICA')
+@section('tituloPagina', 'API RICK AND MORTY - PRUEBA TECNICA - DEAD')
 
 @section('contenido')
     <br>
     <div class="row">
         <h1>Prueba tecnica - Consumo API Rick and Morty - Nicolas Toledo</h1>
+        <p>Estas listando todos los personajes que estan con un estado DESCONOCIDO, puedes revisar todos los demas personajes haciendo click en el boton de 
+            ver la siguiente pagina al final de esta web, o devolverte a la pagina principal para ver las demas categorias de especies.
+        </p>
         <div class="d-grid gap-2 d-md-block mb-3">
             <a href="{{route('apiram.index')}}" class="btn btn-primary"> Volver a la pagina principal</a>
         </div>
@@ -52,7 +55,7 @@
             </ul>
         </div>
         @endforeach
-        <form action="{{ route('apiram.alive2') }}" method="post">
+        <form action="{{ route('apiram.dead2') }}" method="post">
             @csrf
             <input type="hidden" name="siguiente" value="{{ $siguiente }}">
             <button type="submit" class="btn btn-primary">Ir a la siguiente pagina</button>
