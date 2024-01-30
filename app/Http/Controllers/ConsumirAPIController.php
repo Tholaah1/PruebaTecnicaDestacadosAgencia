@@ -79,6 +79,70 @@ class ConsumirAPIController extends Controller
         return view('species', compact('charactersArray', 'siguiente'));
     }
 
+    public function aliens()
+    {
+        //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
+        $characters = HTTP::get('https://rickandmortyapi.com/api/character/?species=alien');
+        $charactersArray = $characters->json();
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
+        $siguiente = $charactersArray['info']['next'];
+        //{{print_r($charactersArray['results']);}}
+        return view('species', compact('charactersArray', 'siguiente'));
+    }
+    public function pbh()
+    {
+        //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
+        $characters = HTTP::get('https://rickandmortyapi.com/api/character/?species=poopybutthole');
+        $charactersArray = $characters->json();
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
+        $siguiente = $charactersArray['info']['next'];
+        //{{print_r($charactersArray['results']);}}
+        return view('species', compact('charactersArray', 'siguiente'));
+    }
+    public function cm()
+    {
+        //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
+        $characters = HTTP::get('https://rickandmortyapi.com/api/character/?species=Mythological');
+        $charactersArray = $characters->json();
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
+        $siguiente = $charactersArray['info']['next'];
+        //{{print_r($charactersArray['results']);}}
+        return view('species', compact('charactersArray', 'siguiente'));
+    }
+
+    public function cronenberg()
+    {
+        //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
+        $characters = HTTP::get('https://rickandmortyapi.com/api/character/?species=cronenberg');
+        $charactersArray = $characters->json();
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
+        $siguiente = $charactersArray['info']['next'];
+        //{{print_r($charactersArray['results']);}}
+        return view('species', compact('charactersArray', 'siguiente'));
+    }
+
+    public function animals()
+    {
+        //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
+        $characters = HTTP::get('https://rickandmortyapi.com/api/character/?species=animal');
+        $charactersArray = $characters->json();
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
+        $siguiente = $charactersArray['info']['next'];
+        //{{print_r($charactersArray['results']);}}
+        return view('species', compact('charactersArray', 'siguiente'));
+    }
+
+    public function unknown2()
+    {
+        //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
+        $characters = HTTP::get('https://rickandmortyapi.com/api/character/?species=unknown');
+        $charactersArray = $characters->json();
+        $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
+        $siguiente = $charactersArray['info']['next'];
+        //{{print_r($charactersArray['results']);}}
+        return view('species', compact('charactersArray', 'siguiente'));
+    }
+
     public function species(Request $request)
     {
         //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
@@ -90,7 +154,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('species', compact('charactersArray', 'siguiente'));
     }
-
 
     public function show(consumirAPI $consumirAPI)
     {

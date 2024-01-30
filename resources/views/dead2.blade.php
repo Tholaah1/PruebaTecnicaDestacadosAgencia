@@ -56,8 +56,12 @@
         @endforeach
         <form action="{{ route('apiram.dead2') }}" method="post">
             @csrf
-            <input type="hidden" name="siguiente" value="{{ $siguiente }}">
-            <button type="submit" class="btn btn-primary">Ir a la siguiente pagina</button>
+            @if ($siguiente == null)
+                <a href="{{route('apiram.index')}}" class="btn btn-primary mb-3"> Volver a la pagina principal</a>  
+            @else
+                <input type="hidden" name="siguiente" value="{{ $siguiente }}">
+                <button type="submit" class="btn btn-primary">Ir a la siguiente pagina</button>
+            @endif
         </form>
     </div>
 @endsection

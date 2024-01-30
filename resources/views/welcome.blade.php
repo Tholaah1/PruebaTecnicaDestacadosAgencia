@@ -15,12 +15,12 @@
         <p>Si quieres ver las demas especies, puedes hacer click en el boton de la especie: </p>
         <div class="d-grid gap-2 d-md-block mb-3">
             <a href="{{route('apiram.humans')}}" class="btn btn-success">Humanos y Humanoides</a>
-            <a href="{{route('apiram.index')}}" class="btn btn-success"> Aliens</a>
-            <a href="{{route('apiram.index')}}" class="btn btn-success"> Poopybuttholes</a>
-            <a href="{{route('apiram.index')}}" class="btn btn-success"> Criaturas mitologicas</a>
-            <a href="{{route('apiram.index')}}" class="btn btn-success"> Crononberg</a>
-            <a href="{{route('apiram.index')}}" class="btn btn-success"> Animales</a>
-            <a href="{{route('apiram.index')}}" class="btn btn-warning"> Especies desconocidas</a>
+            <a href="{{route('apiram.aliens')}}" class="btn btn-success"> Aliens</a>
+            <a href="{{route('apiram.pbh')}}" class="btn btn-success"> Poopybuttholes</a>
+            <a href="{{route('apiram.cm')}}" class="btn btn-success"> Criaturas mitologicas</a>
+            <a href="{{route('apiram.cronenberg')}}" class="btn btn-success"> Cronenberg</a>
+            <a href="{{route('apiram.animals')}}" class="btn btn-success"> Animales</a>
+            <a href="{{route('apiram.unknown2')}}" class="btn btn-warning"> Especies desconocidas</a>
         </div>
 
         @foreach ($charactersArray['results'] as $personaje)
