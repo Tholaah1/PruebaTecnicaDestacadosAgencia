@@ -17,11 +17,18 @@ Esta es la prueba técnica de Nicolás Toledo para la postulación a la empresa 
 3) Una vez creado el proyecto se empiezan a crear las rutas, vistas y controladores.
 ## Sobre el código
 El codigo tiene las siguientes funcionalidades:
-1) Consume los datos de la API segun los requerimientos necesarios y tambien las facultades de la API, ya que esta misma al momento de hacer las consultas a la API, devuelve solo 20 valores. Es por esto que, al momento de hacer el orden alfabetico y de genero de los personajes devueltos por la API, se realiza el ordenamiento por orden alfabetico y de genero por solo esos 20 personajes.
+1) Consume los datos de la API segun los requerimientos necesarios y tambien las facultades de la API, ya que esta misma al momento de hacer las consultas a la API, devuelve solo 20 valores. Es por esto que, al momento de hacer el orden alfabetico y de genero de los personajes devueltos por la API, se realiza el ordenamiento por orden alfabetico y de genero de esos 20 personajes.
 2) El codigo tiene paginación (ver segmento de posibles mejoras). Esta paginación funciona de la siguiente manera:
-    - En la vista principal, se listan los primeros 20 personajes con el status=alive, en orden alfabético y genero. Al momento de hacer click en el botón "Ir a la siguiente página", se listan los siguientes 20 personajes respetando las restricciones dichas.
-    - En la vista principal, hay dos botones en la parte superior, un boton ROJO que indica la filtración de personajes con el status=dead y otro boton amarillo que filtra los personajes con el status=unknown.
-    - Debajo de esos dos botones, hay 7 botones más, que filtran segun el valor de "species" en el json.
+    - En la vista principal, se listan los primeros 20 personajes con el "status=alive", en orden alfabético y genero. Al momento de hacer click en el botón "Ir a la siguiente página", se listan los siguientes 20 personajes respetando las restricciones dichas.
+    - En la vista principal, hay dos botones en la parte superior, un boton ROJO que indica la filtración de personajes con el "status=dead" y otro boton AMARILLO que filtra los personajes con el "status=unknown".
+    - Debajo de esos dos botones, hay 7 botones más, que filtran segun el valor de "species" del json.
     - Los 9 botones mencionados, tienen las mismas funcionalidades que el listado de la página principal. Es decir, listan los 20 personajes retornados por la API, por orden alfabético y por género.
     - Al llegar a la ultima página, el botón de "Ir a la siguiente página" cambia por el de "Volver a la página principal", para evitar conflictos y prevenir errores.
-3) Cada personaje tiene su propia sección. En la parte superior, se encuentra el nombre del personaje. En la parte inferior, se encuentra su foto y la información, respectivamente.
+3) Cada personaje tiene su propia sección. En la parte superior, se encuentra el nombre del personaje y en la parte inferior, se encuentra su foto con su información, respectivamente.
+4) Para prevenir el uso de vistas innecesarias en la filtración de personajes segun el valor de "species", se utilizó una sola vista para seguir con la paginación de cada uno de los grupos de personajes filtrados. Aunque, para la obtencion de los datos necesitados para la filtración, se creó una vista para cada uno de los grupos, llamando desde esa vista (con sus respectivas rutas mediante el controlador) cada una de las peticiones correspondientes a las filtraciones de personajes necesarias. El caso de la página principal es un poco distinto, ya que almacena los botones de las distintas categorias de personajes, por lo que se crearon vistas aparte, para prevenir errores y malfuncionamientos de la herramienta.
+5) Cada una de las categorías posee una ruta distinta (ver segmento de posibles mejoras).
+6) Se utilizó una plantilla blade (layout) para la importacion de estilos Bootstrap 5.0 y así prevenir la reutilización de código que pudiese entorpecer el desarrollo de la herramienta.
+7) No se utilizó ningun motor de Bases de Datos, pero aun así se realizaron algunas migraciones.
+8) Las únicas librerías utilizadas fueron Guzzle y Blade.
+
+## Posibles Mejoras

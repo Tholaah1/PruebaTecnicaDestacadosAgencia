@@ -20,8 +20,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('welcome', compact('charactersArray', 'siguiente', 'cantidadPaginas'));
     }
-
-
     public function alive2(Request $request)
     {
         //Mostrar datos de la API
@@ -35,8 +33,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('welcome2', compact('charactersArray', 'siguiente', 'cantidadPaginas'));
     }
-
-
     public function dead()
     {
         //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
@@ -58,7 +54,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('dead2', compact('charactersArray', 'siguiente'));
     }
-
     public function unknown()
     {
         //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
@@ -69,7 +64,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('dead2', compact('charactersArray', 'siguiente'));
     }
-
     public function humans()
     {
         //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
@@ -80,7 +74,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('species', compact('charactersArray', 'siguiente'));
     }
-
     public function aliens()
     {
         //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
@@ -111,7 +104,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('species', compact('charactersArray', 'siguiente'));
     }
-
     public function cronenberg()
     {
         //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
@@ -122,7 +114,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('species', compact('charactersArray', 'siguiente'));
     }
-
     public function animals()
     {
         //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
@@ -133,7 +124,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('species', compact('charactersArray', 'siguiente'));
     }
-
     public function unknown2()
     {
         //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
@@ -144,7 +134,6 @@ class ConsumirAPIController extends Controller
         //{{print_r($charactersArray['results']);}}
         return view('species', compact('charactersArray', 'siguiente'));
     }
-
     public function species(Request $request)
     {
         //funcion que sirve para mostrar las primeras 20 selecciones de los personajes muertos
@@ -155,28 +144,5 @@ class ConsumirAPIController extends Controller
         $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
         //{{print_r($charactersArray['results']);}}
         return view('species', compact('charactersArray', 'siguiente'));
-    }
-
-    public function show(consumirAPI $consumirAPI)
-    {
-        //
-    }
-
-
-    public function edit(consumirAPI $consumirAPI)
-    {
-        //
-    }
-
-
-    public function update(Request $request, consumirAPI $consumirAPI)
-    {
-        //
-    }
-
-
-    public function destroy(consumirAPI $consumirAPI)
-    {
-        //
     }
 }
