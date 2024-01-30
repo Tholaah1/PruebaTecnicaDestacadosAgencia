@@ -16,8 +16,9 @@ class ConsumirAPIController extends Controller
         $charactersArray = $characters->json();
         $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
         $siguiente = $charactersArray['info']['next'];
+        $cantidadPaginas = $charactersArray['info']['pages'];
         //{{print_r($charactersArray['results']);}}
-        return view('welcome', compact('charactersArray', 'siguiente'));
+        return view('welcome', compact('charactersArray', 'siguiente', 'cantidadPaginas'));
     }
 
 
@@ -29,9 +30,10 @@ class ConsumirAPIController extends Controller
         $characters = HTTP::get($siguiente);
         $charactersArray = $characters->json();
         $siguiente = $charactersArray['info']['next'];
+        $cantidadPaginas = $charactersArray['info']['pages'];
         $charactersArray['results'] = collect($charactersArray['results'])->sortBy('name')->sortBy('gender')->values()->all();
         //{{print_r($charactersArray['results']);}}
-        return view('welcome2', compact('charactersArray', 'siguiente'));
+        return view('welcome2', compact('charactersArray', 'siguiente', 'cantidadPaginas'));
     }
 
 
