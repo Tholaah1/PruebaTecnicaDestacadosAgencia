@@ -6,7 +6,8 @@
 @section('contenido')
     <br>
     <div class="row">
-        <h1>Prueba tecnica - Consumo API Rick and Morty - Nicolas Toledo</h1>
+        <!-- ESTA ES LA VISTA QUE SE ENCARGA DE LISTAR LOS PRIMEROS 20 PEROSNAJES DE TIPO ANIMALES. ESTA VISTA LUEGO LLAMA A LA VISTA SPECIES.BLADE.PHP PARA PODER SEGUIR LISTANDO LOS SIGUIENTES PERSONAJES -->
+        <h1>Prueba tecnica - Consumo API Rick and Morty - Nicolás Toledo</h1>
         <p>Estas listando todos los personajes que son Animales, puedes revisar todos los demas personajes haciendo click en el boton de 
             "Ir a la siguiente página" al final de esta web, o devolverte a la página principal para ver las demas categorias de especies.
         </p>
@@ -50,6 +51,7 @@
             </ul>
         </div>
         @endforeach
+        <!-- Este formulario es el que envia el valor de la pagina que viene a continuacion con sus 20 personajes correspondientes, llevando el valor a traves de la ruta apiram.species por el metodo POST. Los personajes seran cargados en la vista species.blade.php y esa vista es la que se encargara de pedir los siguientes 20. Esta vista se comparte junto con el listado de personajes de cada una de las especies disponible en la API -->
         <form action="{{ route('apiram.species') }}" method="post">
             @csrf
             <input type="hidden" name="siguiente" value="{{ $siguiente }}">

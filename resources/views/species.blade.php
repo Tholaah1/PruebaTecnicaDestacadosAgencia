@@ -5,10 +5,12 @@
 @section('contenido')
     <br>
     <div class="row">
-        <h1>Prueba tecnica - Consumo API Rick and Morty - Nicolas Toledo</h1>
+        <!-- ESTA ES LA VISTA QUE SE ENCARGA DE LISTAR CADA UNA DE LAS ESPECIES. ESTA VISTA SE LLAMA POR CADA LISTADO DE ESPECIES EN ESPECIFICOS, NO SE MEZCLAN-->
+        <h1>Prueba tecnica - Consumo API Rick and Morty - Nicolás Toledo</h1>
         <p>Estas listando todos los personajes de una sola especie. Puedes revisar los demas personajes haciendo click en el boton de 
             ver la siguiente página al final de esta web, o devolverte a la página principal volver a ver las demas categorias de especies.
         </p>
+        <!-- Boton que envia a la vista principal mediante la ruta apiram.index-->
         <div class="d-grid gap-2 d-md-block mb-3">
             <a href="{{route('apiram.index')}}" class="btn btn-primary"> Volver a la página principal</a>
         </div>
@@ -55,6 +57,7 @@
             </ul>
         </div>
         @endforeach
+        <!-- Este formulario es el que envia el valor de la pagina que viene a continuacion con sus 20 personajes correspondientes, llevando el valor a traves de la ruta apiram.species por el metodo POST. Los personajes seran cargados en esta misma vista y hara la peticion de los siguientes 20. Esta vista se comparte junto con el listado de personajes de cada una de las especies disponible en la API -->
         <form action="{{ route('apiram.species') }}" method="post">
             @csrf
             @if ($siguiente == null)

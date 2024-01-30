@@ -3,9 +3,10 @@
 use App\Http\Controllers\ConsumirAPIController;
 use Illuminate\Support\Facades\Route;
 
+//El nombre apiram, viene de la abreviacion de API Rick And Morty.
 
+//Estas son todas las rutas que se crearon para el funcionamiento de la plataforma. Las rutas que tienen el metodo post, son las que se encargan de enviar el valor de la pagina siguiente de la API que entrega el JSON en la query. Estas rutas son apiram.alive2, que envia las siguientes paginas de los personajes que estan vivos, apiram.dead2 que envia las paginas siguientes de los personajes muertos y ademas de los personajes con estado desconocido. Por otro lado se tiene la ruta apiram.species, que se encarga de cargar y listar las siguentes paginas de cada una de las especies distintas de la API, ahorrando la creacion de rutas innecesarias.
 Route::get('/',[ConsumirAPIController::class, 'index'])->name('apiram.index');
-//Route::post('/alive2', 'alive2@ConsumirAPIController')->name('apiram.alive2');
 Route::get('/alive2',[ConsumirAPIController::class, 'alive2'])->name('apiram.alive2');
 Route::post('/alive2',[ConsumirAPIController::class, 'alive2'])->name('apiram.alive2');
 Route::get('/dead1',[ConsumirAPIController::class, 'dead'])->name('apiram.dead1');
