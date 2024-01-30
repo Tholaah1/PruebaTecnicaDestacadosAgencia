@@ -1,12 +1,15 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a><a href="https://laravel.com" target="_blank"><img src="https://repository-images.githubusercontent.com/120371205/b6740400-92d4-11ea-8a13-d5f6e0558e9b" width="400" alt="RAMAPI"></a></p>
 
 <p align="center">
-Esta es la prueba técnica de Nicolás Toledo para la postulación a la empresa DESTACADOS AGENCIA.
+Esta es la realización de la prueba técnica por parte de Nicolás Toledo para la postulación a la empresa AGENCIA DESTACADOS.
 </p>
 
 ## Sobre la creación del proyecto   
 
 - El código está desarrollado en la version de Laravel 10.42.0 y con Composer en su version 2.6.6 como se puede ver en la siguiente imagen.
+
+<p align="center"><a href="" target="_blank"><img src="https://i.imgur.com/USrGive.png" width="400" alt="Laravel Logo"></a></p>
+
 - Para la creación del proyecto se realizaron los siguientes pasos:
 
 1) Primero se creó el directorio donde se crearía el repositorio GIT.
