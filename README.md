@@ -32,3 +32,13 @@ El codigo tiene las siguientes funcionalidades:
 8) Las únicas librerías utilizadas fueron Guzzle y Blade.
 
 ## Posibles Mejoras
+
+1) Para la paginación, las mejoras evidentes son las siguientes:
+    - Botonera en la parte inferior que muestre la cantidad de páginas y al hacer click en una de las páginas disponibles, esta se vaya a la página seleccionada, cargando los personajes correspondientes a esa página. 
+    - Crear una sección en donde se muestren todas las características disponibles. Seleccionar el tipo de especie de personaje que se quiera ver, y se listen todos los correspondientes a esa especie, sin ir cambiando de página para ver los distintos personajes de las especies correspondientes.
+    - Boton de volver a la página anterior.
+2) Para el diseño del código, las rutas son importantes para la obtencion de los datos de la API, por lo que al tener rutas específicas a cada una de las especies o características de los personajes puede ayudar a tener mejor nocion de los datos que se están trabajando, pero se puede mejorar el como estos datos se despliegan en las vistas.
+
+### Apreciaciones personales
+
+En lo personal, el reto es bastante interesante, ya que se debe aplicar bastante conocimiento para la obtencion de datos y listarlos de manera ordenada en la página. Para mi fue un reto, ya que habia ocupado muy poco Laravel (era de programar en PHP Puro), pero ahora que pude realizar este desafío, se ha convertido en uno de mis frameworks favoritos y sin duda uno de mis principales. Muchas gracias por la oportunidad de poder participar en este reto, lo he disfrutado.
