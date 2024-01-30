@@ -6,7 +6,7 @@
     <br>
     <div class="row">
         <h1>Prueba tecnica - Consumo API Rick and Morty - Nicolas Toledo</h1>
-        <p>Estas listando todos los personajes que estan MUERTOS. Puedes revisar los demas personajes haciendo click en el "Ir a la siguiente pagina" al final de esta web, o devolverte a la pagina principal volver a ver las demas categorias de especies.
+        <p>Estas listando los personajes de una sola categoria. Puedes revisar los demas personajes haciendo click en el "Ir a la siguiente pagina" al final de esta web, o devolverte a la pagina principal volver a ver las demas categorias de especies.
         </p>
         <div class="d-grid gap-2 d-md-block mb-3">
             <a href="{{route('apiram.index')}}" class="btn btn-primary"> Volver a la página principal</a>

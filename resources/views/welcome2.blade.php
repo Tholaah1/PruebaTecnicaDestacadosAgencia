@@ -5,8 +5,8 @@
 @section('contenido')
     <br>
     <div class="row">
+        <h1>Prueba tecnica - Consumo API Rick and Morty - Nicolás Toledo</h1>
         <p>Estas listando todos los personajes de una sola especie. Puedes revisar los demas personajes haciendo click en el boton de ver la siguiente página al final de esta web, o devolverte a la pagina principal volver a ver las demas categorias de especies.</p>
-        <h1>Prueba tecnica - Consumo API Rick and Morty - Nicolas Toledo</h1>
         <div class="d-grid gap-2 d-md-block mb-3">
             <a href="{{route('apiram.index')}}" class="btn btn-primary"> Volver a la página principal</a>
         </div>
