@@ -14,10 +14,17 @@ Esta es la realización de la prueba técnica por parte de Nicolás Toledo para 
 
 1) Primero se creó el directorio donde se crearía el repositorio GIT.
 2) Se ejecutaron los siguientes comandos:
-    - composer create-project laravel/laravel PRUEBATECNICADESTACADOSAGENCIA
-    - cd PRUEBATECNICADESTACADOSAGENCIA
-    - php artisan serve
+    - *composer create-project laravel/laravel PruebaTecnicaDestacadosAgencia*
+    - *cd PruebaTecnicaDestacadosAgencia*
+    - *php artisan serve*
 3) Una vez creado el proyecto se empiezan a crear las rutas, vistas y controladores.
+
+## Ejecución del proyecto
+1) Clonar el repositorio utilizando la siguiente URL: https://github.com/Tholaah1/PruebaTecnicaDestacadosAgencia.git
+2) Una vez clonado el repositorio se deben hacer los siguientes pasos, dentro del directorio:
+    - *composer install*
+    - *php artisan serve*
+
 ## Sobre el código
 El codigo tiene las siguientes funcionalidades:
 1) Consume los datos de la API segun los requerimientos necesarios y tambien las facultades de la API, ya que esta misma al momento de hacer las consultas a la API, devuelve solo 20 valores. Es por esto que, al momento de hacer el orden alfabetico y de genero de los personajes devueltos por la API, se realiza el ordenamiento por orden alfabetico y de genero de esos 20 personajes.
